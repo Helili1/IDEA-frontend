@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const API = import.meta.env.VITE_API_URL || '';
 import { ref } from 'vue';
 
 const cards = [
@@ -21,7 +22,7 @@ async function submit() {
   }
   sending.value = true;
   try {
-    const res = await fetch('/api/request', {
+    const res = await fetch(`${API}/api/request`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...form.value, website: '' }),
