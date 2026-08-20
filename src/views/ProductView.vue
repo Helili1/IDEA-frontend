@@ -75,10 +75,10 @@ async function submitOrder() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: form.value.name.trim(),
-        phone: form.value.phone.trim(),
-        message: form.value.message.trim(),
-        productId: product.value?._id,
+      name: form.value.name.trim(),
+      phone: form.value.phone.trim(),
+      message: form.value.message.trim(),
+      productId: product.value?._id as string,
       }),
     });
     sent.value = true;
